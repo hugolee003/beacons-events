@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Head from "next/head";
 import Link from "next/link";
-import { FaUserAlt } from "react-icons/fa";
+import { FaPhone, FaUserAlt } from "react-icons/fa";
 import { HiMail } from "react-icons/hi";
 import { doc, getDoc } from "@firebase/firestore";
 import db from "../../../utils/firebase";
@@ -105,7 +105,7 @@ const RegisterPage = ({ event }) => {
 							className='border px-10 py-2 mb-3 rounded-md w-full'
 							required
 						/>
-						<Fa className=' absolute left-4 top-3 text-gray-300' />
+						<FaPhone className=' absolute left-4 top-3 text-gray-300' />
 						</div>
 
 						<button
