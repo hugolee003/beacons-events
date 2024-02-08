@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Head from "next/head";
 import Link from "next/link";
-import { FaPhone, FaUserAlt } from "react-icons/fa";
+import { FaUserAlt } from "react-icons/fa";
 import { HiMail } from "react-icons/hi";
 import { doc, getDoc } from "@firebase/firestore";
 import db from "../../../utils/firebase";
@@ -71,15 +71,15 @@ const RegisterPage = ({ event }) => {
 					>
 						<label htmlFor='name'>Full name</label>
 						<div className='w-full relative'>
-						<input
-							type='text'
-							name='name' // Set name to "name"
-							value={name}
-							onChange={(e) => setName(e.target.value)}
-							className='border px-10 py-2 mb-3 rounded-md w-full'
-							required
-						/>
-						<FaUserAlt className=' absolute left-4 top-3 text-gray-300' />
+							<input
+								type='text'
+								name='name' // Set name to "name"
+								value={name}
+								onChange={(e) => setName(e.target.value)}
+								className='border px-10 py-2 mb-3 rounded-md w-full'
+								required
+							/>
+							<FaUserAlt className=' absolute left-4 top-3 text-gray-300' />
 						</div>
 
 						<label htmlFor='email'>Email address</label>
@@ -97,15 +97,15 @@ const RegisterPage = ({ event }) => {
 
 						<label htmlFor='phoneNumber'>Phone Number</label>
 						<div className='w-full relative'>
-						<input
-							type='text'
-							name='phone number' // Set name to "phone number"
-							value={phoneNumber}
-							onChange={(e) => setphoneNumber(e.target.value)}
-							className='border px-10 py-2 mb-3 rounded-md w-full'
-							required
-						/>
-						<FaPhone className=' absolute left-4 top-3 text-gray-300' />
+							<input
+								type='text'
+								name='phone Number' //Set name to "phone number"
+								value={phoneNumber}
+								onChange={(e) => setphoneNumber(e.target.value)}
+								className='border px-10 py-2 mb-3 rounded-md w-full'
+								required
+							/>
+							<Fa className=' absolute left-4 top-3 text-gray-300' />
 						</div>
 
 						<button
