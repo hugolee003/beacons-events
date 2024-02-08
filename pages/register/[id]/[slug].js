@@ -29,14 +29,16 @@ const RegisterPage = ({ event }) => {
 	const [success, setSuccess] = useState(false);
 	const [loading, setLoading] = useState(false);
 	const [name, setName] = useState("");
+	const [phoneNumber, setphoneNumber] = useState("");
 	const [email, setEmail] = useState("");
 	const { query } = useRouter();
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
-		registerAttendee(name, email, query.id, setSuccess, setLoading);
+		registerAttendee(name, email, phoneNumber, query.id, setSuccess, setLoading);
 		setEmail("");
 		setName("");
+		phoneNumber("");
 	};
 	if (loading) {
 		return <Loading title='Generating your ticket🤞🏼' />;
@@ -52,7 +54,7 @@ const RegisterPage = ({ event }) => {
 	return (
 		<div>
 			<Head>
-				<title>{`${event.title} | EventTiz`}</title>
+				<title>{`${event.title} | Beacons Events`}</title>
 				<meta
 					name='description'
 					content='An event ticketing system built with NextJS and Firebase'
@@ -92,6 +94,20 @@ const RegisterPage = ({ event }) => {
 							/>
 							<HiMail className=' absolute left-4 top-3 text-gray-300 text-xl' />
 						</div>
+
+						<label htmlFor='email'>Phone Number</label>
+						<div className='w-full relative'>
+							<input
+								type='number'
+								name='Phone Number'
+								value={phoneNumber}
+								onChange={(e) => setName(e.target.value)}
+								className='border px-10 py-2 mb-3 rounded-md w-full'
+								required
+							/>
+							<FaUserAlt className=' absolute left-4 top-3 text-gray-300' />
+						</div>
+
 						<button
 							type='submit'
 							className='bg-[#FFD95A] p-3 font-medium hover:bg-[#C07F00] hover:text-[#FFF8DE] mb-3 rounded-md'
@@ -109,11 +125,11 @@ const RegisterPage = ({ event }) => {
 				<div className='login md:w-[40%] h-[100vh] relative'>
 					<div className='absolute bottom-5 right-5'>
 						<a
-							href='https://github.com/dha-stix'
+							href='https://github.com/hugolee003'
 							target='_blank'
 							className='text-gray-100'
 						>
-							Built by David Asaolu
+							Built by Ugochukwu Egeonu
 						</a>
 					</div>
 				</div>
