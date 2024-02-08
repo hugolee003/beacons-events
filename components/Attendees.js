@@ -30,7 +30,7 @@ const Attendees = ({
 				accessor: "email",
 			},
 			{
-				Header: "phoneNumber",
+				Header: "Phone Number",
 				accessor: "phoneNumber",
 			},
 		],
