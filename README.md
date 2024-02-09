@@ -11,7 +11,7 @@
 
 ## Live Demo
 
-[View Live Version](https://eventtiz.vercel.app)
+[View Live Version](https://beacons-events.vercel.app/)
 
 ## Installation
 
