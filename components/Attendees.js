@@ -29,10 +29,6 @@ const Attendees = ({
 				Header: "Email",
 				accessor: "email",
 			},
-			{
-				Header: "Phone Number",
-				accessor: "phoneNumber",
-			},
 		],
 		[]
 	);

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Head from "next/head";
 import Link from "next/link";
-import { FaPhone, FaUserAlt } from "react-icons/fa";
+import { FaUserAlt } from "react-icons/fa";
 import { HiMail } from "react-icons/hi";
 import { doc, getDoc } from "@firebase/firestore";
 import db from "../../../utils/firebase";
@@ -29,16 +29,14 @@ const RegisterPage = ({ event }) => {
 	const [success, setSuccess] = useState(false);
 	const [loading, setLoading] = useState(false);
 	const [name, setName] = useState("");
-	const [phoneNumber, setphoneNumber] = useState("");
 	const [email, setEmail] = useState("");
 	const { query } = useRouter();
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
-		registerAttendee(name, email, phoneNumber, query.id, setSuccess, setLoading);
+		registerAttendee(name, email, query.id, setSuccess, setLoading);
 		setEmail("");
 		setName("");
-		phoneNumber("");
 	};
 	if (loading) {
 		return <Loading title='Generating your ticket🤞🏼' />;
@@ -54,7 +52,7 @@ const RegisterPage = ({ event }) => {
 	return (
 		<div>
 			<Head>
-				<title>{`${event.title} | Beacons Events`}</title>
+				<title>{`${event.title} | EventTiz`}</title>
 				<meta
 					name='description'
 					content='An event ticketing system built with NextJS and Firebase'
@@ -71,15 +69,15 @@ const RegisterPage = ({ event }) => {
 					>
 						<label htmlFor='name'>Full name</label>
 						<div className='w-full relative'>
-						<input
-							type='text'
-							name='name' // Set name to "name"
-							value={name}
-							onChange={(e) => setName(e.target.value)}
-							className='border px-10 py-2 mb-3 rounded-md w-full'
-							required
-						/>
-						<FaUserAlt className=' absolute left-4 top-3 text-gray-300' />
+							<input
+								type='text'
+								name='name'
+								value={name}
+								onChange={(e) => setName(e.target.value)}
+								className='border px-10 py-2 mb-3 rounded-md w-full'
+								required
+							/>
+							<FaUserAlt className=' absolute left-4 top-3 text-gray-300' />
 						</div>
 
 						<label htmlFor='email'>Email address</label>
@@ -94,20 +92,6 @@ const RegisterPage = ({ event }) => {
 							/>
 							<HiMail className=' absolute left-4 top-3 text-gray-300 text-xl' />
 						</div>
-
-						<label htmlFor='phoneNumber'>Phone Number</label>
-						<div className='w-full relative'>
-						<input
-							type='text'
-							name='phone number' // Set name to "phone number"
-							value={phoneNumber}
-							onChange={(e) => setphoneNumber(e.target.value)}
-							className='border px-10 py-2 mb-3 rounded-md w-full'
-							required
-						/>
-						<FaPhone className=' absolute left-4 top-3 text-gray-300' />
-						</div>
-
 						<button
 							type='submit'
 							className='bg-[#FFD95A] p-3 font-medium hover:bg-[#C07F00] hover:text-[#FFF8DE] mb-3 rounded-md'
@@ -125,11 +109,11 @@ const RegisterPage = ({ event }) => {
 				<div className='login md:w-[40%] h-[100vh] relative'>
 					<div className='absolute bottom-5 right-5'>
 						<a
-							href='https://github.com/hugolee003'
+							href='https://github.com/dha-stix'
 							target='_blank'
 							className='text-gray-100'
 						>
-							Built by Ugochukwu Egeonu
+							Built by David Asaolu
 						</a>
 					</div>
 				</div>
