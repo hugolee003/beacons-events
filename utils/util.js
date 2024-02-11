@@ -221,7 +221,6 @@ export const updateRegLink = async (id) => {
 export const registerAttendee = async (
 	name,
 	email,
-	phoneNumber,
 	event_id,
 	setSuccess,
 	setLoading
@@ -241,7 +240,6 @@ export const registerAttendee = async (
 					name,
 					email,
 					passcode,
-					phoneNumber
 				}),
 			});
 			const flierURL = firebaseEvent.flier_url
@@ -250,7 +248,6 @@ export const registerAttendee = async (
 			sendEmail(
 				name,
 				email,
-				phoneNumber,
 				firebaseEvent.title,
 				firebaseEvent.time,
 				firebaseEvent.date,
