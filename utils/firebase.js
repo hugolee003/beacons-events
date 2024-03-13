@@ -5,14 +5,14 @@ import { getAuth } from "firebase/auth";
 import { getStorage } from "firebase/storage";
 
 const firebaseConfig = {
-	apiKey: "AIzaSyDGtSBbKCSWaF54ak9KvHh8eSqqRYp5_Lg",
-	authDomain: "beacons-event.firebaseapp.com",
-	projectId: "beacons-event",
-	storageBucket: "beacons-event.appspot.com",
-	messagingSenderId: "1073538831293",
-	appId: "1:1073538831293:web:0a0f1ea3368c3997c138d4",
-	measurementId: "G-1EZFYJGL8M"
-};
+	apiKey: "AIzaSyAgECfzfNGJ8rPPj4RuNVwzS4BE13-Di8Y",
+	authDomain: "beacons-events-1.firebaseapp.com",
+	projectId: "beacons-events-1",
+	storageBucket: "beacons-events-1.appspot.com",
+	messagingSenderId: "1008448005628",
+	appId: "1:1008448005628:web:9944055142553bdaba7e79",
+	measurementId: "G-MSWBNZ35BT"
+  };
 
 // Initialize Firebase
 let app = getApps().length === 0 ? initializeApp(firebaseConfig) : getApps()[0];
